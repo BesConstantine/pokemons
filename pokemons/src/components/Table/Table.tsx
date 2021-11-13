@@ -46,18 +46,20 @@ export const Table = () => {
 
   return (
     <div className="Table">
-      <h1
-        className="Table-Title"
-        onClick={()=> console.log(urlForPokemon)}
-      >
-        Pokemonopedia
-      </h1>
-      <div className="Table-Params">
-        <div className="Table-Filters">
-          <Search />
-          <Type />
+      <div className="Table-Header">
+        <h1
+          className="Table-Title"
+          onClick={()=> console.log(urlForPokemon)}
+        >
+          Pokemonopedia
+        </h1>
+        <div className="Table-Params">
+          <div className="Table-Filters">
+            <Search />
+            <Type />
+          </div>
+          <Display />
         </div>
-        <Display />
       </div>
       <PokemonList />
     </div>

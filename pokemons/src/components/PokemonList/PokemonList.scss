@@ -1,14 +1,29 @@
 .PokemonList {
+
   &-List {
     display: grid;
-    grid-template-columns: repeat(auto-fill, 220px);
     gap: 15px;
     padding: 0;
     margin: 0;
     list-style: none;
+
+    &_Cards {
+      grid-template-columns: repeat(auto-fill, 220px);
+      justify-content: center;
+    }
+
+    &_List {
+      grid-template-rows: repeat(auto-fill, 150px);
+    }
   }
 
   &-Item {
-    height: 310px;
+    &_Cards {
+      height: 310px;
+    }
+
+    &_List {
+      height: 150px;
+    }
   }
 }
