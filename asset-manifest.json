@@ -1,23 +1,25 @@
 {
   "files": {
-    "main.css": "/pokemons/static/css/main.dcf804c7.chunk.css",
-    "main.js": "/pokemons/static/js/main.cbb8d9b3.chunk.js",
-    "main.js.map": "/pokemons/static/js/main.cbb8d9b3.chunk.js.map",
-    "runtime-main.js": "/pokemons/static/js/runtime-main.a18d5da8.js",
-    "runtime-main.js.map": "/pokemons/static/js/runtime-main.a18d5da8.js.map",
-    "static/js/2.4e1ac9db.chunk.js": "/pokemons/static/js/2.4e1ac9db.chunk.js",
-    "static/js/2.4e1ac9db.chunk.js.map": "/pokemons/static/js/2.4e1ac9db.chunk.js.map",
-    "static/js/3.82d78a7d.chunk.js": "/pokemons/static/js/3.82d78a7d.chunk.js",
-    "static/js/3.82d78a7d.chunk.js.map": "/pokemons/static/js/3.82d78a7d.chunk.js.map",
+    "main.css": "/pokemons/static/css/main.1ba4f699.chunk.css",
+    "main.js": "/pokemons/static/js/main.eb751527.chunk.js",
+    "main.js.map": "/pokemons/static/js/main.eb751527.chunk.js.map",
+    "runtime-main.js": "/pokemons/static/js/runtime-main.f3f958a9.js",
+    "runtime-main.js.map": "/pokemons/static/js/runtime-main.f3f958a9.js.map",
+    "static/js/2.20cb636d.chunk.js": "/pokemons/static/js/2.20cb636d.chunk.js",
+    "static/js/2.20cb636d.chunk.js.map": "/pokemons/static/js/2.20cb636d.chunk.js.map",
+    "static/js/3.340e1e63.chunk.js": "/pokemons/static/js/3.340e1e63.chunk.js",
+    "static/js/3.340e1e63.chunk.js.map": "/pokemons/static/js/3.340e1e63.chunk.js.map",
     "index.html": "/pokemons/index.html",
-    "static/css/main.dcf804c7.chunk.css.map": "/pokemons/static/css/main.dcf804c7.chunk.css.map",
-    "static/js/2.4e1ac9db.chunk.js.LICENSE.txt": "/pokemons/static/js/2.4e1ac9db.chunk.js.LICENSE.txt",
-    "static/media/PokemonCard.scss": "/pokemons/static/media/pokemon_card.5120cd71.png"
+    "static/css/main.1ba4f699.chunk.css.map": "/pokemons/static/css/main.1ba4f699.chunk.css.map",
+    "static/js/2.20cb636d.chunk.js.LICENSE.txt": "/pokemons/static/js/2.20cb636d.chunk.js.LICENSE.txt",
+    "static/media/PokemonCard.scss": "/pokemons/static/media/pokemon_card.5120cd71.png",
+    "static/media/Display.scss": "/pokemons/static/media/list_icon.0fdcb988.svg",
+    "static/media/index.css": "/pokemons/static/media/pokemons-background.759ecf3c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.a18d5da8.js",
-    "static/js/2.4e1ac9db.chunk.js",
-    "static/css/main.dcf804c7.chunk.css",
-    "static/js/main.cbb8d9b3.chunk.js"
+    "static/js/runtime-main.f3f958a9.js",
+    "static/js/2.20cb636d.chunk.js",
+    "static/css/main.1ba4f699.chunk.css",
+    "static/js/main.eb751527.chunk.js"
   ]
 }
