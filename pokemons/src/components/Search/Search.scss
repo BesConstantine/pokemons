@@ -1,0 +1,11 @@
+.Search {
+  font-weight: bold;
+  font-size: 1.5rem;
+
+  &-Input {
+    height: 36px;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 1.5rem;
+  }
+}

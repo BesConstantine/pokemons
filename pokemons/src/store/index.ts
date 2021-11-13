@@ -1,6 +1,7 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
+import { displayReducer, DisplayState } from './display';
 import { pokemonsReducer, PokemonsState } from './pokemons';
 
 import { searchReducer, SearchState } from './search';
@@ -14,6 +15,7 @@ export type RootState = {
   types: TypesState,
   pokemons: PokemonsState,
   urlForPokemons: UrlForPokemonsState,
+  display: DisplayState,
 };
 
 const rootReducer = combineReducers({
@@ -22,6 +24,7 @@ const rootReducer = combineReducers({
   types: typesReducer,
   pokemons: pokemonsReducer,
   urlForPokemons: urlForPokemonsReducer,
+  display: displayReducer,
 });
 
 export const store = createStore(

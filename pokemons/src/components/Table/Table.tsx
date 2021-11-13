@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getPokemonsFromApi } from '../../api/pokemons';
 import { getTypesFromApi } from '../../api/types';
 import { RootState } from '../../store';
+import { Display } from '../Display';
 import { PokemonList } from '../PokemonList';
 import { Search } from '../Search';
 import { Type } from '../Type';
@@ -52,8 +53,11 @@ export const Table = () => {
         Pokemonopedia
       </h1>
       <div className="Table-Params">
-        <Search />
-        <Type />
+        <div className="Table-Filters">
+          <Search />
+          <Type />
+        </div>
+        <Display />
       </div>
       <PokemonList />
     </div>

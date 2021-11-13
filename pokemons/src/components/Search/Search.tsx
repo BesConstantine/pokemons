@@ -12,9 +12,10 @@ export const Search = () => {
   };
 
   return (
-    <label>
-      {'find Pokemon '}
+    <label className="Search">
+      {'Find Pokemon '}
       <input
+        className="Search-Input"
         type="text"
         value={search}
         onChange={(event) => setSearch(event.target.value)}

@@ -13,17 +13,22 @@ export const Type = () => {
   };
 
   return (
-    <label>
-      {'select type '}
+    <label className="Type">
+      {'Select type '}
       <select
+        className="Type-Select"
         value={type}
         onChange={(event) => setType(event.target.value)}
       >
-        <option value="">
+        <option
+          className="Type-Option"
+          value=""
+        >
           all
         </option>
         {types.map(type => (
           <option
+            className="Type-Option"
             value={type.name}
             key={type.name}
           >
