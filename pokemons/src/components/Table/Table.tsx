@@ -55,7 +55,9 @@ export const Table = () => {
           <Display />
         </div>
       </div>
-      <PokemonList />
+      <PokemonList
+        setLoading={setLoading}
+      />
     </div>
   );
 };

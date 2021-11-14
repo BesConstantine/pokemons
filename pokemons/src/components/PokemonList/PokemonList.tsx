@@ -6,7 +6,11 @@ import { PokemonCard } from '../PokemonCard';
 
 import './PokemonList.scss';
 
-export const PokemonList = () => {
+type Props = {
+  setLoading: (value: boolean) => void,
+};
+
+export const PokemonList = ({ setLoading }: Props) => {
   const search = useSelector((state: RootState) => state.search.search);
   const pokemons = useSelector((state: RootState) => state.pokemons.pokemons);
   const type = useSelector((state: RootState) => state.type.type);
@@ -26,6 +30,10 @@ export const PokemonList = () => {
 
       return pokemon.types.includes(type);
     });
+
+  if (visiblePokemons.length < 18) {
+    setLoading(true);
+  }
 
   return (
     <ul
