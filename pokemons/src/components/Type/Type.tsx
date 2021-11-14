@@ -1,4 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
+
 import { RootState } from '../../store';
 import { action as actionType } from '../../store/type';
 
@@ -13,9 +15,13 @@ export const Type = () => {
   };
 
   return (
-    <label className="Type">
+    <label
+      htmlFor="select_type"
+      className="Type"
+    >
       {'Select type '}
       <select
+        id="select_type"
         className="Type-Select"
         value={type}
         onChange={(event) => setType(event.target.value)}
@@ -26,13 +32,13 @@ export const Type = () => {
         >
           all
         </option>
-        {types.map(type => (
+        {types.map((typeOfPokemon) => (
           <option
             className="Type-Option"
-            value={type.name}
-            key={type.name}
+            value={typeOfPokemon.name}
+            key={typeOfPokemon.name}
           >
-            {type.name}
+            {typeOfPokemon.name}
           </option>
         ))}
       </select>

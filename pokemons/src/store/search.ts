@@ -1,4 +1,4 @@
-import {AnyAction} from 'redux';
+import { AnyAction } from 'redux';
 
 const CHANGE_SEARCH = 'CHANGE_SEARCH';
 
@@ -14,10 +14,10 @@ export const searchState: SearchState = {
   search: '',
 };
 
-export const searchReducer = (state = searchState, action: AnyAction) => {
-  switch (action.type) {
+export const searchReducer = (state = searchState, inputAction: AnyAction) => {
+  switch (inputAction.type) {
     case CHANGE_SEARCH:
-      return { ...state, search: action.payload };
+      return { ...state, search: inputAction.payload };
     default:
       return state;
   }

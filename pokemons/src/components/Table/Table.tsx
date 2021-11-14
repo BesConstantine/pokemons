@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPokemonsFromApi } from '../../api/pokemons';
 import { getTypesFromApi } from '../../api/types';
@@ -19,15 +19,11 @@ export const Table = () => {
   const dispatch = useDispatch();
 
   const scrollHandle = (event: any) => {
-    const scrollHeight = event.target.documentElement.scrollHeight;
-    console.log('scrollHeight' + scrollHeight)
-    const scrollTop = event.target.documentElement.scrollTop;
-    console.log('scrollTop' + scrollTop)
-    const innerHeight = window.innerHeight;
-    console.log('innerHeight' + innerHeight)
+    const { scrollHeight } = event.target.documentElement;
+    const { scrollTop } = event.target.documentElement;
+    const { innerHeight } = window;
     if (scrollHeight - (scrollTop + innerHeight) < 100) {
       dispatch(actionLoading.setLoading(true));
-      console.log(scrollHeight - (scrollTop + innerHeight))
     }
   };
 
@@ -36,7 +32,7 @@ export const Table = () => {
     document.addEventListener('scroll', scrollHandle);
     return () => {
       document.removeEventListener('scroll', scrollHandle);
-    }
+    };
   }, []);
 
   useEffect(() => {
@@ -50,7 +46,6 @@ export const Table = () => {
       <div className="Table-Header">
         <h1
           className="Table-Title"
-          onClick={()=> console.log(urlForPokemon)}
         >
           Pokemonopedia
         </h1>

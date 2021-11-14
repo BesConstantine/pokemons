@@ -14,10 +14,10 @@ export const typeState: TypeState = {
   type: '',
 };
 
-export const typeReducer = (state = typeState, action: AnyAction) => {
-  switch (action.type) {
+export const typeReducer = (state = typeState, inputAction: AnyAction) => {
+  switch (inputAction.type) {
     case SET_TYPE:
-      return { ...state, type: action.payload };
+      return { ...state, type: inputAction.payload };
     default:
       return state;
   }

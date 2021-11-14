@@ -15,14 +15,14 @@ export type PokemonsState = {
 
 export const pokemonsState: PokemonsState = {
   pokemons: [],
-}
+};
 
-export const pokemonsReducer = (state = pokemonsState, action: AnyAction) => {
-  switch (action.type) {
+export const pokemonsReducer = (state = pokemonsState, inputAction: AnyAction) => {
+  switch (inputAction.type) {
     case GET_POKEMONS:
-      return { ...state, pokemons: [ ...state.pokemons, ...action.payload ]};
+      return { ...state, pokemons: [...state.pokemons, ...inputAction.payload] };
     case ADD_POKEMON:
-      return { ...state, pokemons: [ ...state.pokemons, action.payload ]};
+      return { ...state, pokemons: [...state.pokemons, inputAction.payload] };
     default:
       return state;
   }

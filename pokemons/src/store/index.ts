@@ -1,10 +1,10 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
+
 import { displayReducer, DisplayState } from './display';
 import { loadingReducer, LoadingState } from './loading';
 import { pokemonsReducer, PokemonsState } from './pokemons';
-
 import { searchReducer, SearchState } from './search';
 import { typeReducer, TypeState } from './type';
 import { typesReducer, TypesState } from './types';

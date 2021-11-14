@@ -13,12 +13,12 @@ export type TypesState = {
 
 export const typesState: TypesState = {
   types: [],
-}
+};
 
-export const typesReducer = (state = typesState, action: AnyAction) => {
-  switch (action.type) {
+export const typesReducer = (state = typesState, inputAction: AnyAction) => {
+  switch (inputAction.type) {
     case GET_TYPES:
-      return { ...state, types: [ ...action.payload ]};
+      return { ...state, types: [...inputAction.payload] };
     default:
       return state;
   }

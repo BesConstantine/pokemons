@@ -1,4 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+
 import { RootState } from '../../store';
 import { action as actionSearch } from '../../store/search';
 
@@ -12,9 +14,13 @@ export const Search = () => {
   };
 
   return (
-    <label className="Search">
+    <label
+      htmlFor="find_pokemon"
+      className="Search"
+    >
       {'Find Pokemon '}
       <input
+        id="find_pokemon"
         className="Search-Input"
         type="text"
         value={search}

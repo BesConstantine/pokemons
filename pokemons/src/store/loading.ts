@@ -8,16 +8,16 @@ export const action = {
 
 export type LoadingState = {
   loading: boolean,
-}
+};
 
 export const loadingState: LoadingState = {
   loading: true,
-}
+};
 
-export const loadingReducer = (state = loadingState, action: AnyAction) => {
-  switch (action.type) {
+export const loadingReducer = (state = loadingState, inputAction: AnyAction) => {
+  switch (inputAction.type) {
     case SET_LOADING:
-      return { ...state, loading: action.payload };
+      return { ...state, loading: inputAction.payload };
     default:
       return state;
   }
