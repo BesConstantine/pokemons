@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+import { action as actionLoading } from '../store/loading';
 import { action as actionPokemons } from '../store/pokemons'
 import { action as actionUrlForPokemon } from '../store/urlForPokemons';
 
@@ -31,7 +32,7 @@ function createPokemon(pokemonFromApi) {
   };
 }
 
-export const getPokemonsFromApi = (url, setIsLoading) => {
+export const getPokemonsFromApi = (url) => {
   if (url) {
     return function(dispatch) {
     axios.get(url)
@@ -45,7 +46,9 @@ export const getPokemonsFromApi = (url, setIsLoading) => {
             })
         }
       })
-      .finally(() =>setTimeout(() => setIsLoading(false), 1000))
+      .finally(() =>setTimeout(() => {
+        dispatch(actionLoading.setLoading(true));
+      }, 1000))
     }
   }
 }

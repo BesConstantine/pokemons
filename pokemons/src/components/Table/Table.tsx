@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getPokemonsFromApi } from '../../api/pokemons';
 import { getTypesFromApi } from '../../api/types';
 import { RootState } from '../../store';
+import { action as actionLoading } from '../../store/loading';
 import { Display } from '../Display';
 import { PokemonList } from '../PokemonList';
 import { Search } from '../Search';
@@ -11,8 +12,8 @@ import { Type } from '../Type';
 import './Table.scss';
 
 export const Table = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
+  // const [isLoading, setIsLoading] = useState(true);
+  const loading = useSelector((state: RootState) => state.loading.loading);
   const urlForPokemon = useSelector((state: RootState) => state.urlForPokemons.urlForPokemons);
 
   const dispatch = useDispatch();
@@ -25,7 +26,7 @@ export const Table = () => {
     const innerHeight = window.innerHeight;
     console.log('innerHeight' + innerHeight)
     if (scrollHeight - (scrollTop + innerHeight) < 100) {
-      setIsLoading(true);
+      dispatch(actionLoading.setLoading(true));
       console.log(scrollHeight - (scrollTop + innerHeight))
     }
   };
@@ -39,25 +40,27 @@ export const Table = () => {
   }, []);
 
   useEffect(() => {
-    if (isLoading) {
-      dispatch(getPokemonsFromApi(urlForPokemon, setIsLoading));
+    if (loading) {
+      dispatch(getPokemonsFromApi(urlForPokemon));
     }
-  }, [isLoading]);
+  }, [loading]);
 
   return (
     <div className="Table">
-      <h1
-        className="Table-Title"
-        onClick={()=> console.log(urlForPokemon)}
-      >
-        Pokemonopedia
-      </h1>
-      <div className="Table-Params">
-        <div className="Table-Filters">
-          <Search />
-          <Type />
+      <div className="Table-Header">
+        <h1
+          className="Table-Title"
+          onClick={()=> console.log(urlForPokemon)}
+        >
+          Pokemonopedia
+        </h1>
+        <div className="Table-Params">
+          <div className="Table-Filters">
+            <Search />
+            <Type />
+          </div>
+          <Display />
         </div>
-        <Display />
       </div>
       <PokemonList />
     </div>

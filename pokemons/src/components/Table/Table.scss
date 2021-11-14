@@ -2,12 +2,21 @@
   max-width: 1400px;
   margin: 16px auto 0;
 
+  &-Header {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
   &-Title {
     margin: 0;
     font-size: 4rem;
     text-align: center;
     letter-spacing: 3px;
     color: #231884;
+    border-top: 4px solid #231884;
+    border-left: 4px solid #231884;
+    border-right: 4px solid #231884;
     background-color: #ffd400;
     border-top-left-radius: 16px;
     border-top-right-radius: 16px;
@@ -24,6 +33,9 @@
     border-bottom-left-radius: 16px;
     border-bottom-right-radius: 16px;
     background-color: #ffd400;
+    border-right: 4px solid #231884;
+    border-left: 4px solid #231884;
+    border-bottom: 4px solid #231884;
   }
 
   &-Filters {

@@ -1,37 +1,55 @@
 .PokemonCard {
-  position: absolute;
-  width: 220px;
-  height: 310px;
-  transition-duration: 0.5s;
-  animation: appearance 0.5s linear 1;
+
+  &_Cards {
+    position: absolute;
+    width: 220px;
+    height: 310px;
+    transition-duration: 0.5s;
+    animation: appearance 0.5s linear 1;
+  }
 
   &-Reverse {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: url(../../images/pokemon_card.png);
-    background-size: contain;
-    background-repeat: no-repeat ;
-    transition-duration: 0.5s;
-    animation: flip-hide 0.3s linear 1s 1 alternate;
+    &_Cards {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      border-radius: 15px;
+      background-image: url(../../images/pokemon_card.png);
+      background-size: contain;
+      background-repeat: no-repeat ;
+      transition-duration: 0.5s;
+      animation: flip-hide 0.3s linear 1s 1 alternate;
+    }
+
+    &_List {
+      display: none;
+    }
   }
 
   &-Face {
-    position: absolute;
-    height: 100%;
-    width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
-    height: 310px;
     padding: 8px 8px;
     box-sizing: border-box;
-    border: 12px solid #231884;
     border-radius: 15px;
     box-shadow: 4px 4px 4px #ccc;
     transition-duration: 0.3s;
     background-color: #ffd400;
-    animation: flip 0.3s linear 1s 1 alternate, hide 1s linear 1;
+
+    &_Cards {
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      flex-direction: column;
+      height: 310px;
+      border: 12px solid #231884;
+      animation: flip 0.3s linear 1s 1 alternate, hide 1s linear 1;
+    }
+
+    &_List {
+      border: 4px solid #231884;
+      gap: 8px;
+    }
 
     &:hover {
       box-shadow: 8px 8px 8px #aaa;
@@ -41,10 +59,17 @@
   }
 
   &-Container-Image {
-    width: 100%;
     background-color: #d6b40d;
     border-radius: 10px;
     text-align: center;
+
+    &_Cards {
+      width: 100%;
+    }
+
+    &_List {
+
+    }
   }
 
   &-Image {
@@ -54,6 +79,11 @@
 
   &-Name {
     margin: 0;
+
+    &_List {
+      width: 300px;
+      text-align: center;
+    }
   }
 
   &-Details-Container {
@@ -62,10 +92,24 @@
     justify-content: space-evenly;
     align-items: center;
     background-color: #d6b40d;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    width: 100%;
+    border-radius: 10px;
     cursor: pointer;
+    box-sizing: border-box;
+
+    &_Cards {
+      width: 100%;
+
+      &_Active {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+      }
+    }
+
+    &_List {
+      align-self: stretch;
+      gap: 8px;
+      padding: 4px 8px;
+    }
   }
 
   &-Details {
@@ -83,13 +127,24 @@
     background-position: center;
     background-size: cover;
     background-color: #fff0;
-    transform: rotate(-90deg);
     cursor: pointer;
     transition-duration: 0.3s;
 
-    &_Active {
-      transform: rotate(0deg);
+    &_Cards {
+      transform: rotate(-90deg);
+
+      &_Active {
+        transform: rotate(0deg);
+      }
     }
+
+    &_List {
+
+      &_Active {
+        transform: rotate(-90deg);
+      }
+    }
+
   }
 
   &-Specification {
@@ -102,12 +157,43 @@
       max-height: 150px;
       overflow: visible;
     }
+
+    &_Cards {
+
+    }
+
+    &_List {
+      display: flex;
+      flex-direction: row;
+      align-self: stretch;
+    }
   }
 
   &-Table {
     background-color: #d6b40d;
     box-sizing: border-box;
-    width: 100%;
+
+    &_Cards {
+      width: 100%;
+    }
+
+    &_List {
+      width: 400px;
+      border-bottom-left-radius: 10px;
+    }
+  }
+
+  &-Table-Main-Title {
+    display: none;
+
+    &_List {
+      display: table-caption;
+      text-align: center;
+      background-color: #d6b40d;
+      border-top-left-radius: 10px;
+      padding: 8px;
+      font-size: 1.5rem;
+    }
   }
 
   &-Table-Title {
@@ -131,6 +217,26 @@
     justify-content: space-evenly;
     width: 100%;
     background-color: #d6b40d;
+  }
+
+  &-Types-Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #d6b40d;
+    flex-basis: 30%;
+    flex-shrink: 1;
+  }
+
+  &-Types-Title {
+    display: none;
+
+    &_List {
+      display: block;
+      margin: 0;
+      font-weight: normal;
+      text-align: center;
+    }
   }
 
   &-Type {
@@ -224,6 +330,35 @@
     }
   }
 
+  &-Moves-Container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #d6b40d;
+    flex-basis: 30%;
+    flex-shrink: 1;
+    border-bottom-right-radius: 10px;
+
+    &_Cards {
+      border-bottom-left-radius: 10px;
+    }
+
+    &_List {
+      border-top-right-radius: 10px;
+    }
+  }
+
+  &-Moves-Title {
+    display: none;
+
+    &_List {
+      display: block;
+      margin: 0;
+      font-weight: normal;
+      text-align: center;
+    }
+  }
+
   &-Moves {
     display: flex;
     flex-direction: row;
@@ -231,6 +366,10 @@
     background-color: #d6b40d;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+
+    &_List {
+      padding: 0 24px;
+    }
   }
 
   &-Button {
