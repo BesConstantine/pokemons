@@ -34,7 +34,7 @@ export const Table = () => {
   }, []);
 
   useEffect(() => {
-    if (loading) {
+    if (loading && urlForPokemon) {
       dispatch(getPokemonsFromApi(urlForPokemon, setLoading));
     }
   }, [loading]);

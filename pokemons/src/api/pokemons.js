@@ -30,22 +30,20 @@ function createPokemon(pokemonFromApi) {
   };
 }
 
-export const getPokemonsFromApi = (url, setLoading) => {
-  if (url) {
-    return function (dispatch) {
-      axios.get(url)
-        .then((response) => {
-          dispatch(actionUrlForPokemon.changeUrl(response.data.next));
-          for (const pokemon of response.data.results) {
-            axios.get(pokemon.url)
-              .then((information) => {
-                dispatch(actionPokemons.addPokemon(createPokemon(information.data)));
-              });
-          }
-        })
-        .finally(() => setTimeout(() => {
-          setLoading(false);
-        }, 1000));
-    };
-  }
-};
+export function getPokemonsFromApi(url, setLoading) {
+  return function (dispatch) {
+    axios.get(url)
+      .then((response) => {
+        dispatch(actionUrlForPokemon.changeUrl(response.data.next));
+        for (const pokemon of response.data.results) {
+          axios.get(pokemon.url)
+            .then((information) => {
+              dispatch(actionPokemons.addPokemon(createPokemon(information.data)));
+            });
+        }
+      })
+      .finally(() => setTimeout(() => {
+        setLoading(false);
+      }, 1000));
+  };
+}

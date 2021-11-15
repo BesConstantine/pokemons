@@ -7,7 +7,7 @@ export const action = {
 };
 
 export type UrlForPokemonsState = {
-  urlForPokemons: string,
+  urlForPokemons: string | null,
 };
 
 export const urlForPokemonsState: UrlForPokemonsState = {
